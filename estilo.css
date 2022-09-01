@@ -1,0 +1,27 @@
+#titulo_principal{text-align: center;}
+h2{text-align: center;}
+.paragrafos{
+    height: 200px;
+    text-align: center; 
+    display: inline-block;
+     border: 1px solid red; 
+     overflow-y: scroll;
+     width: 300px;
+     padding: 10px;
+    }
+     
+#div_central{text-align: center;}
+#rodape{
+    text-align: center;
+    background-color: gainsboro;
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    transition: background-color 4s, color 5s;
+}
+
+#rodape:hover{
+    background-color: rgb(128, 128, 128);
+    color: rgb(85, 85, 85);
+}
