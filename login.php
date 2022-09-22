@@ -19,6 +19,12 @@
      echo "Seja bem vindo(a)";
      $user = $retorno->fetch_array();
      $conexao->query("INSERT INTO ponto (id_user) VALUES (" . $user['id'] . ")");
+     $ruser =$conexao->query("SELECT * FROM ponto WHERE id_user=" . $user['id'] . "");
+    
+     while ($user = $ruser->fetch_array()){
+        echo $user['registro']."<br>";
+
+        }
  }else{
      echo "Usuário não autorizado";
  }
@@ -33,14 +39,17 @@
     }else{
         echo 'usuário não autorizado';
     }
-    ?>
+    ?> - autenticação, primeira tentativa.
 
-echo $conexao->host_info; informações sobre o banco no geral
 
- echo var_dump($retorno);
+     $conexao->query("INSERT INTO ponto (id_user) VALUES (" . $user['id'] . ")"); - inseriu valores de registro sewmpre que um login era efetuado.
+
+echo $conexao->host_info; - informações sobre o banco no geral.
+
+ echo var_dump($retorno); - ter certeza que o cod iria buscar a informação correta.
 
  while ($user = $retorno->fetch_array()){
-    echo $user['nome']."<br>"; 
+    echo $user['nome']."<br>"; - laço que nesse cod puxou todos os registros salvos na tabela.
 } */
 ?>
    
