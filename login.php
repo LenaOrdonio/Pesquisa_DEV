@@ -10,19 +10,19 @@
 
 <?php
  
- $conexao = mysqli_connect('localhost','root','','pesquisa_DEV');
+ $conexao = mysqli_connect('localhost','root','','mdp');
  $user = $_POST['usuario'];
  $pass = $_POST['senha'];
- $retorno = $conexao->query("SELECT * FROM user WHERE user='$user' AND pass = '$pass';");
+ $retorno = $conexao->query("SELECT * FROM membros WHERE user='$user' AND pass = '$pass';");
  echo $retorno->num_rows;
  if ($retorno->num_rows == 1){
      echo "Seja bem vindo(a)";
      $user = $retorno->fetch_array();
-     $conexao->query("INSERT INTO ponto (id_user) VALUES (" . $user['id'] . ")");
-     $ruser =$conexao->query("SELECT * FROM ponto WHERE id_user=" . $user['id'] . "");
+     $conexao->query("INSERT INTO ponto (id) VALUES (" . $user['id'] . ")");
+     $ruser =$conexao->query("SELECT * FROM ponto WHERE id=" . $user['id'] . "");
     
      while ($user = $ruser->fetch_array()){
-        echo $user['registro']."<br>";
+        echo $user['horario']."<br>";
 
         }
  }else{
